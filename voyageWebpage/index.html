@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voyage - Travel Website</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            color: #555;
+            background: #fff;
+        }
+
+        /* =========================
+        TOP BAR
+        ========================== */
+
+        .top-bar {
+            background: #263c4d;
+            color: #fff;
+            font-size: 11px;
+            padding: 7px 0;
+        }
+
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            opacity: 0.9;
+        }
+
+        .top-bar a:hover {
+            color: #1dd5c0;
+        }
+
+        .top-social a {
+            margin: 0 7px;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+            min-height: 65px;
+            background: #fff;
+            padding: 0;
+        }
+
+        .navbar-brand {
+            font-size: 25px;
+            font-weight: 600;
+            color: #2b3f50 !important;
+            letter-spacing: -1px;
+        }
+
+        .navbar-brand span {
+            color: #20c9b7;
+        }
+
+        .navbar-nav .nav-link {
+            color: #555;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 25px 16px !important;
+            transition: 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #1dcdb8;
+        }
+
+        .search-icon {
+            font-size: 17px;
+            color: #333;
+            margin-left: 8px;
+        }
+
+        /* =========================
+        HERO
+        ========================== */
+
+.hero {
+height: 430px;
+background:
+    linear-gradient(rgba(20, 43, 58, 0.62), rgba(20, 43, 58, 0.62)),
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=80")
+    center center / cover no-repeat;
+
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+color: #fff;
+}
+
+.hero-content {
+text-align: center;
+margin-top: -20px;
+}
+
+.hero-content h1 {
+font-size: 30px;
+font-weight: 700;
+text-transform: uppercase;
+margin-bottom: 10px;
+}
+
+.hero-content p {
+font-size: 14px;
+margin-bottom: 25px;
+}
+
+.btn-theme {
+background: #20cbb8;
+border: none;
+color: #fff;
+padding: 11px 20px;
+font-size: 11px;
+text-transform: uppercase;
+margin: 4px;
+border-radius: 2px;
+}
+
+.btn-theme:hover {
+background: #16ad9e;
+color: #fff;
+}
+
+.btn-outline-light-custom {
+border: 1px solid #fff;
+color: #fff;
+padding: 10px 20px;
+font-size: 11px;
+text-transform: uppercase;
+background: transparent;
+border-radius: 2px;
+}
+
+.btn-outline-light-custom:hover {
+background: #fff;
+color: #333;
+}
+
+/* =========================
+SEARCH
+========================== */
+
+.search-area {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(35, 57, 73, 0.95);
+padding: 16px 0;
+}
+
+.search-label {
+color: #fff;
+font-size: 10px;
+text-transform: uppercase;
+}
+
+.search-label strong {
+display: block;
+font-size: 14px;
+}
+
+.search-area input,
+.search-area select {
+height: 38px;
+border: none;
+border-radius: 0;
+font-size: 11px;
+color: #777;
+}
+
+.search-button {
+height: 38px;
+background: #20cbb8;
+color: white;
+border: none;
+padding: 0 20px;
+font-size: 11px;
+}
+
+/* =========================
+SECTION COMMON
+========================== */
+
+.section {
+padding: 55px 0;
+}
+
+.section-title {
+text-align: center;
+margin-bottom: 35px;
+}
+
+.section-title h2 {
+font-size: 18px;
+color: #344b5d;
+text-transform: uppercase;
+margin-bottom: 5px;
+}
+
+.section-title p {
+font-size: 10px;
+color: #777;
+}
+
+/* =========================
+SPECIAL OFFERS
+========================== */
+
+.offer-card {
+position: relative;
+overflow: hidden;
+height: 145px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.offer-card img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: 0.4s;
+}
+
+.offer-card:hover img {
+transform: scale(1.08);
+}
+
+.offer-overlay {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(34, 51, 64, 0.85);
+color: #fff;
+padding: 9px 10px;
+}
+
+.offer-overlay h6 {
+font-size: 10px;
+margin: 0;
+text-transform: uppercase;
+}
+
+.offer-overlay p {
+font-size: 8px;
+margin: 2px 0 0;
+}
+
+.offer-card.active {
+border: 3px solid #1ecdb9;
+}
+
+/* =========================
+HOLIDAY TYPES
+========================== */
+
+.holiday-types {
+background:
+    linear-gradient(rgba(30, 53, 69, 0.9), rgba(30, 53, 69, 0.9)),
+    url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80")
+    center / cover;
+color: #fff;
+padding: 60px 0;
+}
+
+.holiday-title {
+text-align: center;
+margin-bottom: 35px;
+}
+
+.holiday-title h2 {
+font-size: 17px;
+text-transform: uppercase;
+}
+
+.holiday-title p {
+font-size: 10px;
+color: #bfcbd3;
+}
+
+.holiday-item {
+text-align: center;
+}
+
+.holiday-icon {
+width: 68px;
+height: 68px;
+border: 2px solid #fff;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto;
+font-size: 26px;
+transition: 0.3s;
+}
+
+.holiday-item:hover .holiday-icon,
+.holiday-item.active .holiday-icon {
+border-color: #20cbb8;
+background: #20cbb8;
+}
+
+.holiday-item h6 {
+margin-top: 10px;
+font-size: 10px;
+font-weight: 400;
+}
+
+/* =========================
+CLIENTS
+========================== */
+
+.clients {
+padding: 50px 0 70px;
+}
+
+.testimonial {
+position: relative;
+border: 1px solid #eee;
+padding: 20px;
+min-height: 135px;
+font-size: 10px;
+color: #888;
+}
+
+.testimonial:after {
+content: "";
+position: absolute;
+bottom: -10px;
+left: 30px;
+width: 18px;
+height: 18px;
+background: #fff;
+border-right: 1px solid #eee;
+border-bottom: 1px solid #eee;
+transform: rotate(45deg);
+}
+
+.client-name {
+color: #1dcbb7;
+margin-top: 12px;
+font-size: 10px;
+font-weight: 600;
+}
+
+/* =========================
+FOOTER
+========================== */
+
+footer {
+background: #263c4d;
+color: #d7e0e5;
+padding-top: 45px;
+}
+
+footer h5 {
+color: #1dcbb7;
+font-size: 14px;
+margin-bottom: 15px;
+}
+
+footer p,
+footer li {
+font-size: 10px;
+line-height: 1.8;
+}
+
+footer ul {
+list-style: none;
+padding: 0;
+}
+
+.newsletter input {
+width: 75%;
+height: 34px;
+border: none;
+padding: 8px;
+font-size: 10px;
+}
+
+.newsletter button {
+width: 25%;
+height: 34px;
+border: none;
+background: #20cbb8;
+color: white;
+font-size: 10px;
+}
+
+.tag {
+display: inline-block;
+border: 1px solid #71808a;
+padding: 4px 7px;
+margin: 2px;
+font-size: 8px;
+}
+
+.footer-social a {
+color: white;
+margin-right: 12px;
+font-size: 12px;
+}
+
+.footer-bottom {
+margin-top: 35px;
+border-top: 1px solid rgba(255,255,255,0.1);
+padding: 18px 0;
+text-align: center;
+font-size: 9px;
+}
+
+.footer-links a {
+color: #b8c5cc;
+text-decoration: none;
+margin: 0 7px;
+}
+
+.footer-links a:hover {
+color: #20cbb8;
+}
+
+/* =========================
+RESPONSIVE
+========================== */
+
+@media (max-width: 991px) {
+
+.navbar-nav .nav-link {
+    padding: 12px 10px !important;
+}
+
+.navbar-collapse {
+    padding-bottom: 15px;
+}
+
+.hero {
+    height: 500px;
+}
+
+.search-area {
+    padding: 12px;
+}
+
+.search-area .row {
+    gap: 5px;
+}
+
+.holiday-item {
+    margin-bottom: 25px;
+}
+}
+
+@media (max-width: 767px) {
+
+.top-bar {
+    text-align: center;
+}
+
+.top-social {
+    margin-top: 5px;
+}
+
+.hero {
+    height: 600px;
+}
+
+.hero-content h1 {
+    font-size: 23px;
+}
+
+.hero-content p {
+    font-size: 12px;
+    padding: 0 20px;
+}
+
+.search-area {
+    position: absolute;
+}
+
+.search-area .col-md-2,
+.search-area .col-md-3 {
+    margin-bottom: 5px;
+}
+
+.offer-card {
+    margin-bottom: 15px;
+}
+
+.holiday-types {
+    padding: 45px 0;
+}
+
+.testimonial {
+    margin-bottom: 30px;
+}
+
+footer .footer-column {
+    margin-bottom: 30px;
+}
+}
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+    TOP BAR
+====================================================== -->
+
+<div class="top-bar">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-md-8">
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    Agent Login
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    Customer Login
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Not a Member? <span style="color:#20cbb8;">Register</span>
+                </a>
+
+                <span>
+                    <i class="fa-solid fa-phone"></i>
+                    Call Us Now: 815-123-4567
+                </span>
+            </div>
+
+            <div class="col-md-4 text-md-end top-social">
+
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-tumblr"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- =====================================================
+    NAVBAR
+====================================================== -->
+
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            V<span>O</span>YAGE
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Destinations
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Cruises
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Specials
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Holidays
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Blog
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+    HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-arrow left">
+        <i class="fa-solid fa-chevron-left"></i>
+    </div>
+
+    <div class="hero-arrow right">
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <div class="hero-content">
+
+        <h1>To Travel Is To Live</h1>
+
+        <p>
+            You Don't Need Magic to Disappear. All you need is a destination.
+        </p>
+
+        <div>
+
+            <a href="#" class="btn btn-theme">
+                Show on the map
+            </a>
+
+            <a href="#" class="btn btn-outline-light-custom">
+                More info
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="search-area">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-2 col-md-12">
+
+                    <div class="search-label">
+                        Find Your
+                        <strong>Holidays</strong>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+
+                    <select class="form-select">
+                        <option>Where</option>
+                        <option>Europe</option>
+                        <option>Asia</option>
+                        <option>America</option>
+                        <option>Africa</option>
+                    </select>
+
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+
+                    <input
+                        type="date"
+                        class="form-control"
+                    >
+
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+
+                    <button class="search-button w-100">
+                        Search
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SPECIAL OFFERS
+====================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Special Offers</h2>
+
+            <p>
+                Best packages where people love to stay!
+            </p>
+
+        </div>
+
+
+        <div class="row g-3">
+
+            <!-- Card 1 -->
+            <div class="col-lg-2 col-md-4 col-6">
+
+                <div class="offer-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=500&q=80"
+                        alt="USA"
+                    >
+
+                    <div class="offer-overlay">
+
+                        <h6>Statue of Liberty - USA</h6>
+
+                        <p>
+                            New Destination
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 2 -->
+            <div class="col-lg-2 col-md-4 col-6">
+
+                <div class="offer-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=500&q=80"
+                        alt="Seychelles"
+                    >
+
+                    <div class="offer-overlay">
+
+                        <h6>Spectacular Seychelles</h6>
+
+                        <p>
+                            New Destination
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 3 -->
+            <div class="col-lg-2 col-md-4 col-6">
+
+                <div class="offer-card active">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=500&q=80"
+                        alt="Hong Kong"
+                    >
+
+                    <div class="offer-overlay">
+
+                        <h6>Hong Kong & Macau</h6>
+
+                        <p>
+                            Special Offer
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 4 -->
+            <div class="col-lg-2 col-md-4 col-6">
+
+                <div class="offer-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=500&q=80"
+                        alt="Paris"
+                    >
+
+                    <div class="offer-overlay">
+
+                        <h6>Vietnam Highlights</h6>
+
+                        <p>
+                            New Destination
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 5 -->
+            <div class="col-lg-2 col-md-4 col-6">
+
+                <div class="offer-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=500&q=80"
+                        alt="India"
+                    >
+
+                    <div class="offer-overlay">
+
+                        <h6>Spectacular Seychelles</h6>
+
+                        <p>
+                            New Destination
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 6 -->
+            <div class="col-lg-2 col-md-4 col-6">
+
+                <div class="offer-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=500&q=80"
+                        alt="Dubai"
+                    >
+
+                    <div class="offer-overlay">
+
+                        <h6>Dubai</h6>
+
+                        <p>
+                            New Destination
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+    HOLIDAY TYPES
+====================================================== -->
+
+<section class="holiday-types">
+
+    <div class="container">
+
+        <div class="holiday-title">
+
+            <h2>Holidays Type</h2>
+
+            <p>
+                Get explore your dream to travel the world
+            </p>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+
+            <!-- Cruise -->
+            <div class="col-6 col-md-2 holiday-item">
+
+                <div class="holiday-icon">
+
+                    <i class="fa-solid fa-ship"></i>
+
+                </div>
+
+                <h6>Cruise</h6>
+
+            </div>
+
+
+            <!-- City Breaks -->
+            <div class="col-6 col-md-2 holiday-item">
+
+                <div class="holiday-icon">
+
+                    <i class="fa-solid fa-building"></i>
+
+                </div>
+
+                <h6>City Breaks</h6>
+
+            </div>
+
+
+            <!-- Honeymoon -->
+            <div class="col-6 col-md-2 holiday-item active">
+
+                <div class="holiday-icon">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                </div>
+
+                <h6>Honeymoon</h6>
+
+            </div>
+
+
+            <!-- Adventure -->
+            <div class="col-6 col-md-2 holiday-item">
+
+                <div class="holiday-icon">
+
+                    <i class="fa-solid fa-compass"></i>
+
+                </div>
+
+                <h6>Adventure</h6>
+
+            </div>
+
+
+            <!-- Safari -->
+            <div class="col-6 col-md-2 holiday-item">
+
+                <div class="holiday-icon">
+
+                    <i class="fa-solid fa-tree"></i>
+
+                </div>
+
+                <h6>Safari</h6>
+
+            </div>
+
+
+            <!-- Beach -->
+            <div class="col-6 col-md-2 holiday-item">
+
+                <div class="holiday-icon">
+
+                    <i class="fa-solid fa-water"></i>
+
+                </div>
+
+                <h6>Beach</h6>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+    HAPPY CLIENTS
+====================================================== -->
+
+<section class="clients">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Happy Clients</h2>
+
+            <p>
+                What customer say about us and why love our services!
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="testimonial">
+
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since.
+
+                    <div class="client-name">
+                        Client Name
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="testimonial">
+
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since.
+
+                    <div class="client-name">
+                        Client Name
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="testimonial">
+
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since.
+
+                    <div class="client-name">
+                        Client Name
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+    FOOTER
+====================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Newsletter -->
+
+            <div class="col-lg-3 col-md-6 footer-column">
+
+                <h5>Newsletter</h5>
+
+                <p>
+                    Data autem vel exuine dolore id hendrerit
+                    a volutpat etis ut elit. Sed consequat.
+                </p>
+
+                <div class="newsletter d-flex">
+
+                    <input
+                        type="email"
+                        placeholder="Subscribe..."
+                    >
+
+                    <button>
+                        GO
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Latest News -->
+
+            <div class="col-lg-3 col-md-6 footer-column">
+
+                <h5>Latest News</h5>
+
+                <div class="d-flex mb-3">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=100&q=80"
+                        width="45"
+                        height="45"
+                        class="me-2"
+                        style="object-fit:cover;"
+                    >
+
+                    <p>
+                        Footprints - Many Multiple<br>
+                        <small>September 15, 2024</small>
+                    </p>
+
+                </div>
+
+                <div class="d-flex">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=100&q=80"
+                        width="45"
+                        height="45"
+                        class="me-2"
+                        style="object-fit:cover;"
+                    >
+
+                    <p>
+                        Snowboarding is fun!<br>
+                        <small>September 10, 2024</small>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tags -->
+
+            <div class="col-lg-3 col-md-6 footer-column">
+
+                <h5>Tags</h5>
+
+                <div>
+
+                    <span class="tag">Agent Login</span>
+                    <span class="tag">Customer Login</span>
+                    <span class="tag">Not a Member?</span>
+                    <span class="tag">Contact</span>
+                    <span class="tag">New Holidays</span>
+                    <span class="tag">Location</span>
+                    <span class="tag">News</span>
+                    <span class="tag">Tours</span>
+                    <span class="tag">Travel</span>
+                    <span class="tag">Beach</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Address -->
+
+            <div class="col-lg-3 col-md-6 footer-column">
+
+                <h5>Address</h5>
+
+                <p>
+                    Destination Street<br>
+                    165, 1045 Berlin, Germany
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +49 123 456 789
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@voyage.com
+                </p>
+
+                <div class="footer-social">
+
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-tumblr"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+
+        <div class="footer-bottom">
+
+            <div class="footer-links mb-2">
+
+                <a href="#">Home</a>
+                <a href="#">Destinations</a>
+                <a href="#">Cruises</a>
+                <a href="#">Specials</a>
+                <a href="#">Holidays</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact Us</a>
+
+            </div>
+
+            <div>
+                Copyright © Voyage. All Rights Reserved.
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
